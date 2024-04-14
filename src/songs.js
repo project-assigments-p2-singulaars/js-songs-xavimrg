@@ -1,32 +1,52 @@
-//Exercise 1: Get the array of all Artists.
-function getAllArtists(array){
-    let result = '???';
-    //console.log("Exercise 1 ->", result);
-    return result;
+/*Exercise 1: Get the array of all Artists. 6 features like map, filter, reduce, 
+sort and ternary operators (It's mandatory to use them to manipulate arrays) for, 
+forEach and if/else*/
+function getAllArtists(songs){
+    const artist = songs.map((song) => songs.artist);
+    console.log(artist);
+   
 };
 
 //Exercise 2: Get the songs of a certain artist
+//function getSongsFromArtist(songs, artist){
+  //  const concretesong = songs.find((songs => songs);
+   // console.log(title)
+//};
+
 function getSongsFromArtist(array, artist){
-    //Write your code here
+    let result = array.filter((song) => song.artist === artist);
+
+    return result
 };
 
 //Exercise 3: Alphabetic order by title
-function orderAlphabetically(){
-    //Write your code here
+function orderByTitleAlphabetically(songs) {
+    const orderedAlphabetically = songs.sort((a, b) => a.title.localeCompare(b.title));
+    return orderedAlphabetically;
 };
 
+
 //Exercise 4: Order by year, ascending
-function orderByYear(){
+function orderByYear(songs) {
+    const orderedByYear = songs.sort((a, b) => a.year - b.year);
+    return orderedByYear;
     //Write your code here
 };
 
 //Exercise 5: Filter songs by genre
-function songsByGenre() {
-    //Write your code here
-};
+
+
+function songsByGenre(songs, genreFilter) {
+    const filteredSongs = songs.filter((song) => song.genre.includes(genreFilter));
+    return filteredSongs;
+}
+
+const rockSongs = songsByGenre(songs, "Rock");
+console.log(rockSongs);
 
 //Exercise 6: Modify the duration of songs to seconds
-function minutsToSeconds() {
+function minutsToSeconds(songs, duration) {
+
     //Write your code here
 };
 
@@ -41,4 +61,4 @@ function getLongestSong(){
 
 
 
-export { getAllArtists, getSongsFromArtist, orderAlphabetically, orderByYear, songsByGenre, minutsToSeconds, getLongestSong };
+export { getAllArtists, getSongsFromArtist, orderAlphabetically, orderByYear, songsByGenre, minutsToSeconds, getLongestSong } from "./data";
